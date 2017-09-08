@@ -1,0 +1,28 @@
+{
+  "name": "ejs-mde-loader",
+  "version": "1.0.0",
+  "description": "EJS loader for webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "cd test && node ./build.js && node ./dist/bundle.js"
+  },
+  "keywords": [
+    "ejs",
+    "mde",
+    "webpack",
+    "loader",
+    "template"
+  ],
+  "author": "henian.xu",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "html-minifier": "^3.5.3",
+    "loader-utils": "^1.1.0",
+    "merge": "^1.2.0",
+    "uglify-js": "~2.6.1"
+  },
+  "devDependencies": {
+    "webpack": "^3.5.6"
+  }
+}
