@@ -6,6 +6,10 @@
   "scripts": {
     "test": "cd test && node ./build.js && node ./dist/bundle.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/twtylkmrh/ejs-mde-loader.git"
+  },
   "keywords": [
     "ejs",
     "mde",
