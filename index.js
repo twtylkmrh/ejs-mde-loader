@@ -20,15 +20,27 @@ module.exports = function(source) {
 
   // Skip compile debug for production when running with
   // webpack --optimize-minimize
+  opts.compileDebug = true;
   if (this.minimize && opts.compileDebug === undefined) {
     opts.compileDebug = false;
   }
   // Use filenames relative to working dir, which should be project root
   opts.filename = path.relative(process.cwd(), this.resourcePath);
+  const includeReg = /\s*include[\('\s]*(\S+)'/g;
+  let match;
+  while (match = includeReg.exec(source)) {
+    console.log('match----', opts.filename);
+    this.dependency(path.normalize(ejs.resolveInclude(match[1], opts.filename)));
+    console.log('match----', opts.filename);
+  }
 
   if (opts.htmlMin) {
     source = htmlMin.minify(source, opts['htmlminOptions'] || {});
   }
+
+  console.log('opts---', opts);
+  console.log('this.ejs---', this.ejs);
+  console.log('this.options.ejs---', this.options.ejs);
 
   let template = ejs.compile(source, opts);
 

@@ -14,7 +14,10 @@ module.exports = {
     rules: [
       {
         test: /\.ejs$/,
-        loader: require.resolve('../index.js') + '?htmlmin',
+        loader: require.resolve('../index.js'),
+        query: {
+          htmlmin: true,
+        },
       },
     ],
   },

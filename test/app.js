@@ -3,8 +3,10 @@
  *
  */
 
-const assert = require('assert');
+// const assert = require('assert');
 
 var tpl = require('./template.ejs');
 
-assert.equal(tpl({noun: 'World'}), 'Hello, World!\r\n');
+console.log(tpl);
+
+// assert.equal(tpl({noun: 'World'}), 'Hello, World!\r\n');
