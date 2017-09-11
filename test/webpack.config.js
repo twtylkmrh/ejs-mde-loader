@@ -15,9 +15,9 @@ module.exports = {
       {
         test: /\.ejs$/,
         loader: require.resolve('../index.js'),
-        query: {
+        /*query: {
           htmlmin: true,
-        },
+        },*/
       },
     ],
   },
