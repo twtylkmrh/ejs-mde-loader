@@ -4,7 +4,6 @@
  */
 
 const ejs = require('ejs'),
-    UglifyJS = require('uglify-js'),
     utils = require('loader-utils'),
     path = require('path'),
     htmlMin = require('html-minifier'),
@@ -19,10 +18,11 @@ module.exports = function(source) {
   opts.client = true;
   // Use filenames relative to working dir, which should be project root
   opts.filename = path.relative(process.cwd(), this.resourcePath);
-  if (opts.htmlMin) {
-    source = htmlMin.minify(source, opts['htmlminOptions'] || {});
-  }
+
   let compile = ejs.compile(source, opts);
   let template = compile();
+  if (opts['htmlminOptions']) {
+    template = htmlMin.minify(template, opts['htmlminOptions']);
+  }
   return 'module.exports = ' + JSON.stringify(template);
 };

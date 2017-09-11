@@ -1,6 +1,6 @@
 {
   "name": "ejs-mde-loader",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "EJS loader for webpack",
   "main": "index.js",
   "scripts": {
@@ -23,8 +23,7 @@
     "ejs": "^2.5.7",
     "html-minifier": "^3.5.3",
     "loader-utils": "^1.1.0",
-    "merge": "^1.2.0",
-    "uglify-js": "~2.6.1"
+    "merge": "^1.2.0"
   },
   "devDependencies": {
     "webpack": "^3.5.6"
