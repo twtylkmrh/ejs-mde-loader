@@ -15,9 +15,10 @@ module.exports = {
       {
         test: /\.ejs$/,
         loader: require.resolve('../index.js'),
-        /*query: {
-          htmlmin: true,
-        },*/
+        options: {
+          minimize: true,
+          attrs: ['img:src'],
+        },
       },
     ],
   },
